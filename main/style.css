@@ -1,0 +1,124 @@
+:root {
+  color-scheme: dark light;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: radial-gradient(circle at top, #1d2b53, #090a14 60%);
+  color: #f7f7f7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.layout {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: minmax(220px, 280px) minmax(360px, 1fr);
+  align-items: start;
+  width: min(960px, 100%);
+}
+
+.sidebar {
+  background: rgba(11, 12, 30, 0.75);
+  border-radius: 1rem;
+  padding: 1.75rem;
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+}
+
+.sidebar h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.75rem, 2vw + 1rem, 2.5rem);
+}
+
+.instructions {
+  line-height: 1.5;
+  margin: 0 0 1rem;
+  color: #cfd9ff;
+}
+
+.scoreboard {
+  margin-top: 2rem;
+  font-size: 1.125rem;
+}
+
+.scoreboard .label {
+  display: inline-block;
+  width: 4rem;
+  font-weight: 600;
+  color: #7db2ff;
+}
+
+.game-wrapper {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 2rem 3.5rem rgba(0, 0, 0, 0.45);
+}
+
+#game {
+  display: block;
+  background: linear-gradient(#2a2d38, #090a14 80%);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(3, 4, 10, 0.76);
+}
+
+.overlay-card {
+  background: #111327;
+  border-radius: 0.75rem;
+  padding: 2rem 2.5rem;
+  text-align: center;
+  box-shadow: inset 0 0 0 1px rgba(125, 178, 255, 0.2);
+}
+
+.overlay-card h2 {
+  margin: 0 0 0.75rem;
+  font-size: 2rem;
+}
+
+.overlay-card button {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #2b8cff, #7c4dff);
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 0.75rem 1.5rem rgba(43, 140, 255, 0.45);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.overlay-card button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 1rem 2.5rem rgba(43, 140, 255, 0.55);
+}
+
+@media (max-width: 800px) {
+  body {
+    padding: 1.5rem;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .game-wrapper {
+    justify-self: center;
+  }
+}
