@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Simple Car Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="sidebar">
+        <h1>Arcade Driver</h1>
+        <p class="instructions">
+          Use the <kbd>←</kbd> and <kbd>→</kbd> arrow keys (or <kbd>A</kbd> / <kbd>D</kbd>)
+          to steer the car. Dodge the cones to keep the run going.
+        </p>
+        <p class="instructions">
+          Press <kbd>Space</kbd> to restart after a crash.
+        </p>
+        <div class="scoreboard">
+          <p><span class="label">Score:</span> <span id="score">0</span></p>
+          <p><span class="label">Best:</span> <span id="best-score">0</span></p>
+        </div>
+      </section>
+
+      <section class="game-wrapper">
+        <canvas id="game" width="360" height="600" aria-label="Driving lane"></canvas>
+        <div id="game-over" class="overlay" hidden>
+          <div class="overlay-card">
+            <h2>Crash!</h2>
+            <p>You hit a cone. Press <kbd>Space</kbd> to drive again.</p>
+            <button id="restart" type="button">Restart</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
