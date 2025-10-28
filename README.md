@@ -1,30 +1,25 @@
-# Drag & Drop PyTorch IDE
+# Linkhub Dashboard
 
-A React + TypeScript visual editor for assembling PyTorch models with real-time shape inference and code export.
+A lightweight, dependency-free dashboard for curating a shareable personal link page in the style of Linktree. Update your profile, theme, and link list from a single screen while a live preview mirrors the shared experience.
 
-## Getting started
+## Previewing locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-Then open http://localhost:5173.
+Then open http://localhost:5173 in your browser. The terminal must remain open while you are previewing. Alternatively, `npm start` and `npm run preview` are aliases for the same static server.
 
-## Features
+## Available scripts
 
-- Layer palette with drag-and-drop onto the canvas powered by React Flow.
-- Schema-driven inspector for editing layer parameters with live validation.
-- Shape engine that topologically sorts the graph and reports errors/warnings.
-- Console that streams shape traces, validation issues, and a live PyTorch code preview.
-- Code generator that emits a runnable `VisualNet` model plus a training stub.
-- Local storage persistence, JSON import/export, and curated example graphs.
-- Undo/redo, snap-to-grid canvas interactions, and automatic code export gating when invalid.
+- `npm run dev` / `npm start` / `npm run preview` – serve the static dashboard for local development
+- `npm test` – smoke-check that the required static assets exist
 
-## Testing
+## Key features
 
-```bash
-npm test
-```
-
-The Vitest suite covers shape inference and code generation basics.
+- Inline editing for profile name, handle, bio, and avatar URL with instant preview updates
+- Theme picker with multiple curated gradients and accent colors
+- Add, edit, disable, and reorder unlimited links with keyboard-friendly controls
+- Mobile-focused preview layout that mirrors the public share page, including copy-link CTA
+- Zero external build tooling for quick installs and predictable previews
